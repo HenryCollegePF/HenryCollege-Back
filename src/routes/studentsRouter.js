@@ -16,7 +16,7 @@ studentsRouter.post("/login", logInStudentHandler)
 studentsRouter.get("/", checkJwt, getHandler)
 
 // Ruta protegida para actualizar estudiante
-studentsRouter.put("/", checkJwt, updateHandler)
+studentsRouter.put("/:id", checkJwt, updateHandler)
 
 module.exports = studentsRouter
 

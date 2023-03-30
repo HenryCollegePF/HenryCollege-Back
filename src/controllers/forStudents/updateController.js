@@ -1,6 +1,8 @@
 const {Stundents} = require("../../db")
-const updateController = async (info) => {
- const db = await Stundents.findAll()
+const updateController = async (id,password) => {
+    console.log(id)
+ const db = await Stundents.update({password:password},{where:{id}})
+ console.log(db)
  return db
 }
 module.exports = updateController
