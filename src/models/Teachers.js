@@ -2,6 +2,10 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
     sequelize.define("Teachers", {
+        active: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
+        },
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
