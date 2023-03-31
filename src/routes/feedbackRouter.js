@@ -5,7 +5,7 @@ const getHandler = require("../handlers/forFeedBack/getHandler");
 const postHandler = require("../handlers/forFeedBack/postHandler");
 
 //Protegida
-feedBackRouter.get("/", checkJwt, getHandler);
+feedBackRouter.get("/:id", checkJwt, getHandler);
 feedBackRouter.post("/",checkJwt, postHandler)
 
 module.exports = feedBackRouter;

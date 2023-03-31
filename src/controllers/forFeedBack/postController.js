@@ -7,7 +7,14 @@ const postController = async (
   studentId
 ) => {
   const dbStudent = await Students.findByPk(studentId);
-  const newFeedBack = await Feedback.create({});
+  const newFeedBack = await Feedback.create({
+    rate: rate, 
+    courseFeedback: courseFeedback,
+    teachersFeedback: teachersFeedback,
+    StudentId: dbStudent.id
+  });
+
+  return newFeedBack
 };
 
 module.exports = postController;

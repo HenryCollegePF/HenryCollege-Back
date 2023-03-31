@@ -1,39 +1,39 @@
 const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
-    sequelize.define("Students", {
-        active: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: true,
-        },
-       firstName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        lastName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        phone: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        auth0Id: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        isExternal: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false,
-        },
-        emailVerified: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false,
-        }
-    })
-}
+  sequelize.define("Students", {
+    active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    auth0Id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    isExternal: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    emailVerified: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+  });
+};
