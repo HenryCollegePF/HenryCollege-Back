@@ -23,7 +23,7 @@ studentsRouter.put("/:id", checkJwt, updateHandler)
 //ruta protegida delete
 studentsRouter.delete("/:id", checkJwt, deleteHandler)
 
-studentsRouter.get("/:id", idHandler)
+studentsRouter.get("/:id",checkJwt, idHandler)
 
 module.exports = studentsRouter
 
