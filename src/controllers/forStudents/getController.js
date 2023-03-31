@@ -1,4 +1,4 @@
-const {Students} = require("../../db")
+const {Students, Feedback} = require("../../db")
 
 const getStudents = async() => {
     const db = await Students.findAll()

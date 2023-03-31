@@ -1,4 +1,4 @@
-const { Students } = require("../../db");
+const { Students, Feedback} = require("../../db");
 const { auth0Login, auth0SignUp } = require("../../utils/auth0Utils");
 const { v4: uuidv4 } = require('uuid');
 
