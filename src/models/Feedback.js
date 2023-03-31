@@ -4,15 +4,16 @@ module.exports = (sequelize) => {
     sequelize.define("Feedback", {
         courseFeedback: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         teachersFeedback: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         rate: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.ENUM('One', 'Two', 'Three', 'Four', 'Five'),
             allowNull: false,
         },
+       
     })
 }
