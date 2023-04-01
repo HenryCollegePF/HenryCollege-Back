@@ -12,12 +12,12 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
         pricePaid: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        paymentId: { //viene de la pasarela de pagos
-            type: DataTypes.INTEGER,
-            primaryKey: true,
+        paymentId: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         expirationDate: {
             type: DataTypes.DATE,
