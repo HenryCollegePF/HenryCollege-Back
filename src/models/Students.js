@@ -27,10 +27,6 @@ module.exports = (sequelize) => {
             allowNull: false,
             unique: true
         },
-        isExternal: {
-            type: DataTypes.BOOLEAN,
-            defaultValue: false,
-        },
         emailVerified: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
