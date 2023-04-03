@@ -1,17 +1,23 @@
-const { Feedback, Students } = require("../../db");
+const { Feedback, Students,Course } = require("../../db");
 
 const postController = async (
   rate,
   courseFeedback,
   teachersFeedback,
-  studentId
+  studentId,
+  courseId
 ) => {
-  const dbStudent = await Students.findByPk(studentId);
+  const dbCourse = await Course.findOne({where:{id:courseId}})
+  console.log(dbCourse)
+  const dbStudent = await Students.findOne({where:{id:studentId}});
+  console.log(dbStudent)
   const newFeedBack = await Feedback.create({
-    rate: rate, 
-    courseFeedback: courseFeedback,
-    teachersFeedback: teachersFeedback,
-    StudentId: dbStudent.id
+    rate,
+    courseFeedback,
+    teachersFeedback,
+    dbStudent,
+    dbCourse
+    
   });
 
   return newFeedBack

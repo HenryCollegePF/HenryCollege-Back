@@ -1,9 +1,11 @@
 const updateController = require("../../controllers/forStudents/updateController");
 
+
 const updateHandler = async (req, res) => {
   try {
-    const { password } = req.body;
-    const updated = updateController(req.params.id, password);
+    const {userId} = req.params
+    const { newPassword} = req.body;
+   const updated = await updateController(userId, newPassword);
     res.status(200).json(updated);
   } catch (error) {
     console.log(error);

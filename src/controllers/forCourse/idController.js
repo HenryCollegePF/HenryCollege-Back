@@ -1,9 +1,14 @@
-const { getCourses } = require("./getController")
+
+const {Feedback,Course} = require("../../db")
 
 const getId = async (id) => {
-    const allCourse = await getCourses()
-    const filtered = allCourse.filter(e => e.id == id)
-    return filtered
+    const db = await Course.findByPk(id,{
+        includes:{
+            model:Feedback,
+            attributes:"courseFeedback"
+        }
+    })
+    return db
 }
 
 module.exports = getId;
