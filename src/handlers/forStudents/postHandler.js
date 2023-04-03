@@ -16,6 +16,9 @@ const createStudentHandler = async (req, res) => {
 const logInStudentHandler = async (req, res) => {
     try {
         const user = await logInStudent(req.body)
+
+        if (!user.student.active) throw new Error('Este usuario esta baneado.')
+
         res.status(200).json(user)
     } catch (error) {
         console.log(error);

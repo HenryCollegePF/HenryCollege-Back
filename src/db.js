@@ -40,8 +40,6 @@ const {
 
 
 // Aca vendrian las relaciones
-Course.hasMany(Feedback)
-Feedback.belongsTo(Course)
 Course.belongsToMany(Students, { through: "courseNstudents" })
 Students.belongsToMany(Course, { through: "courseNstudents" })
 Teachers.hasMany(Course,{
@@ -52,10 +50,15 @@ Course.belongsTo(Teachers,{
   foreignKey:"teacherId",
   targetId:"id"
 })
-Students.hasMany(Feedback)
+Students.hasMany(Feedback)  
 Feedback.belongsTo(Students)
+
 Teachers.hasMany(Feedback)
 Feedback.belongsTo(Teachers)
+
+Course.hasMany(Feedback)
+Feedback.belongsTo(Course)
+
 Students.hasOne(Membership)
 Membership.belongsTo(Students)
 

@@ -19,6 +19,7 @@ const createTeacher = async (info) => {
             imagen,
             auth0Id: auth._id,
             emailVerified: false,
+            active:true,
         }
     })
     return { newTeacher, auth }
