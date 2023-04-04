@@ -93,7 +93,7 @@ const getAdminToken = async () => {
       grant_type: 'client_credentials',
       client_id: process.env.AUTH0_CLIENT_ID,
       client_secret: process.env.AUTH0_CLIENT_SECRET,
-      audience: `${process.env.AUTH0_DOMAIN}/api/v2/`,
+      audience: process.env.AUTH0_AUDIENCE,
     });
 
     if (!data.access_token) throw new Error('No se pudo obtener el token de administrador de Auth0');

@@ -1,6 +1,11 @@
-const getStudents  = require("../../controllers/forStudents/getController");
+const { getStudentByAuth0Id, getStudents } = require("../../controllers/forStudents/getController");
 
 const getHandler = async (req, res) => {
+  if (req.params.id) {
+    const user = await getStudentByAuth0Id(req.params.id);
+    return res.send(user)
+  }
+
   const { name } = req.query;
   const found = await getStudents();
   try {
@@ -9,8 +14,9 @@ const getHandler = async (req, res) => {
         ? res.status(200).json(found)
         : res.status(404).json("users not found");
     } else {
-      const filtered = found.filter((e) =>{
-        return e.firstName.toLowerCase().includes(name.toLowerCase())}
+      const filtered = found.filter((e) => {
+        return e.firstName.toLowerCase().includes(name.toLowerCase())
+      }
       );
       res.status(200).json(filtered)
     }
