@@ -2,7 +2,7 @@ const { Teachers } = require("../../db");
 const { auth0SignUp, auth0Login } = require("../../utils/auth0Utils");
 
 const createTeacher = async (info) => {
-    const { firstName, lastName, email, phone, imagen } = info
+    const { firstName, lastName, email, phone, image } = info
 
     // Crea el profesor en Auth0
     const auth = await auth0SignUp(info, 'teacher')
@@ -16,7 +16,7 @@ const createTeacher = async (info) => {
             lastName,
             email,
             phone,
-            imagen,
+            image,
             auth0Id: auth._id,
             emailVerified: false,
             active:true,
