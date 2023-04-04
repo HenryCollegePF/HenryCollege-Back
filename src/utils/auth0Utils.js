@@ -128,8 +128,22 @@ const getAllUsers = async () => {
   }
 }
 
+const changePassword = async (email) => {
+  try {
+    const { data } = await axios.post(`${process.env.AUTH0_DOMAIN}/dbconnections/change_password`, {
+      connection: 'Username-Password-Authentication',
+      client_id: process.env.AUTH0_CLIENT_ID,
+      email: email,
+    });
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
 module.exports = {
   auth0Login,
   auth0SignUp,
-  getAllUsers
+  getAllUsers,
+  changePassword
 }

@@ -1,9 +1,11 @@
+const { Students } = require("../../db")
+const { changePassword } = require("../../utils/auth0Utils")
 
-const {auth0} = require("auth0-js")
-
-
-const updateController = async (userId,newPassword) => {
-await auth0.updateUser({ id: userId }, { password: newPassword });
-return "Password updated successfully"
+const updateController = async (userId) => {
+    const user = await Students.findByPk(userId)
+    if (!user) throw new Error("No se encontro el usuario con el id solicitado")
+    const response = await changePassword(user.email)
+    return response
 }
+
 module.exports = updateController
