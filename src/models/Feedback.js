@@ -14,5 +14,14 @@ module.exports = (sequelize) => {
       type: DataTypes.ENUM("One", "Two", "Three", "Four", "Five"),
       allowNull: false,
     },
+    /*studentId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },*/
+    /*courseId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },*/
+    
   });
 };

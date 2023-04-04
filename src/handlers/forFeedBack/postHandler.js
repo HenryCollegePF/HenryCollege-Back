@@ -2,7 +2,8 @@ const postController = require("../../controllers/forFeedBack/postController");
 const postHandler = async (req, res) => {
   try {
     const { rate, courseFeedback, teachersFeedback, studentId, courseId } = req.body;
-    console.log(studentId,courseId)
+    
+
     
     const resFeed = await postController(
       rate,

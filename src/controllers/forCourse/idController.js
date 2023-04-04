@@ -3,9 +3,9 @@ const {Feedback,Course} = require("../../db")
 
 const getId = async (id) => {
     const db = await Course.findByPk(id,{
-        includes:{
+        include:{
             model:Feedback,
-            attributes:"courseFeedback"
+            attribute:["id"]
         }
     })
     return db

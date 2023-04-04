@@ -50,14 +50,26 @@ Course.belongsTo(Teachers,{
   foreignKey:"teacherId",
   targetId:"id"
 })
-Students.hasMany(Feedback)  
-Feedback.belongsTo(Students)
+Students.hasMany(Feedback,{
+  foreignKey: "studentId",
+  sourceKey: "id"
+})  
+Feedback.belongsTo(Students,{
+  foreignKey: "studentId",
+  targetId: "id"
+})
 
-Teachers.hasMany(Feedback)
-Feedback.belongsTo(Teachers)
+/*Teachers.hasMany(Feedback)
+Feedback.belongsTo(Teachers)*/
 
-Course.hasMany(Feedback)
-Feedback.belongsTo(Course)
+Course.hasMany(Feedback,{
+  foreignKey: "courseId",
+  sourceKey: "id"
+})
+Feedback.belongsTo(Course, {
+  foreignKey: "courseId",
+  targetId: "id"
+})
 
 Students.hasOne(Membership)
 Membership.belongsTo(Students)
