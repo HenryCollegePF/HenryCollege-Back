@@ -19,7 +19,7 @@ studentsRouter.put('/reset-password/:userId', updateHandler)
 // Ruta protegida
 studentsRouter.get("/", checkJwt, getHandler)
 studentsRouter.delete("/:id", checkJwt, deleteHandler)
-studentsRouter.put("/active/:id", checkJwt, activeHandler)
+//studentsRouter.put("/active/:id", checkJwt, activeHandler)
 studentsRouter.get("/:id",checkJwt, idHandler)
 
 module.exports = studentsRouter

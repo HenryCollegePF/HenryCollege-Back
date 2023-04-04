@@ -1,4 +1,4 @@
-const activeController = require("../../controllers/forStudents/activeController")
+/*const activeController = require("../../controllers/forStudents/activeController")
 
 const activeHandler = async(req, res) =>{
     const {id} = req.params
@@ -11,4 +11,4 @@ const activeHandler = async(req, res) =>{
     }
 }
 
-module.exports= activeHandler
+module.exports= activeHandler*/

@@ -1,4 +1,4 @@
-const {Students} = require("../../db")
+/*const {Students} = require("../../db")
 
 const activeController = async(id) => {
  if(Students.active !== true){
@@ -9,4 +9,4 @@ const activeController = async(id) => {
     }
 }
 
-module.exports = activeController
+module.exports = activeController*/
